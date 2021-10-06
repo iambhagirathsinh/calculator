@@ -1,0 +1,11 @@
+<div class="calculator">
+    <input type="text" [(ngModel)]="display">
+</div><br/><br/>
+
+
+<app-cal (box)="output($event)"></app-cal>
+<router-outlet></router-outlet>
+
+
+
+
