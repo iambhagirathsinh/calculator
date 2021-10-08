@@ -9,10 +9,12 @@ export class CalComponent implements OnInit {
 
   constructor() { }
 
+  @Input() ivalues: {btn: string} = {btn: ''};
+
   @Output() box: any = new EventEmitter();
 
   arr: any = [];
-  display:any = "" ;
+  display:any = "";
   a: any;
   b: any;
   c: any;
@@ -20,41 +22,33 @@ export class CalComponent implements OnInit {
   
 
   ngOnInit(): void {
-    
   }
 
   in(value: any){
+  this.oprator(value);
+    console.log(this.display);
     this.box.emit(this.display);
     if((this.b == "+") || (this.b == "-") || (this.b == "*") || (this.b == "/")){
+      
       this.d = this.d + value;
-      this.display = this.display + value;
+      this.display = this.display /*+ value*/;
       this.c = this.d;
     }
 
     else{
-      this.display = this.display + value;
+      this.display = this.display /*+ value*/;
       this.a = this.display;
     }
+
+    this.result();
   }
 
   oprator(value: any){
-    this.box.emit(this.display);
     this.display = this.display + value;
-    this.b = value;
+      this.b = value;
   }
-
-  clear(){
-    this.box.emit(this.display);
-    this.display = "";
-    this.a = "";
-    this.b = "";
-    this.c = "";
-    this.d = "";
-  }
-  
 
   result(){
-    this.box.emit(this.display);
     if(this.b == "+"){
     this.display = this.display + "=" + (parseInt(this.a) + parseInt(this.c)).toString();
     this.display = (parseInt(this.display) + parseInt(this.c)).toString();
@@ -76,11 +70,5 @@ export class CalComponent implements OnInit {
       this.display = this.display + "=" + (parseInt(this.a) / parseInt(this.c)).toString();
       this.display = (parseInt(this.display) / parseInt(this.c)).toString();
     }
-}
-
-  
-
-
-
-
+  }
 }

@@ -2,8 +2,10 @@
     <input type="text" [(ngModel)]="display">
 </div><br/><br/>
 
+<div *ngFor="let b of buttonValues; let i = index">
+    <app-cal (box)="output($event)" [ivalues]="b"></app-cal>
+</div>
 
-<app-cal (box)="output($event)"></app-cal>
 <router-outlet></router-outlet>
 
 
