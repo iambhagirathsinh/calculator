@@ -25,50 +25,60 @@ export class CalComponent implements OnInit {
   }
 
   in(value: any){
-  this.oprator(value);
-    console.log(this.display);
-    this.box.emit(this.display);
-    if((this.b == "+") || (this.b == "-") || (this.b == "*") || (this.b == "/")){
+    this.oprator(value);
+      console.log(this.display);
+    
+   if((this.b === "+") || (this.b === "-") || (this.b === "*") || (this.b === "/")){
       
-      this.d = this.d + value;
-      this.display = this.display /*+ value*/;
+      this.d = this.d + this.display;
+      this.display = this.display/* + value*/;
       this.c = this.d;
+      console.log(this.c);
+      console.log(this.d);
+      
     }
 
     else{
       this.display = this.display /*+ value*/;
       this.a = this.display;
+      console.log(this.a);
+      
     }
-
     this.result();
+    
   }
 
   oprator(value: any){
     this.display = this.display + value;
-      this.b = value;
+      this.b = this.display;
+      console.log(this.b);
   }
 
+
+
   result(){
-    if(this.b == "+"){
+    this.box.emit(this.display);
+    if(this.b === "+"){
     this.display = this.display + "=" + (parseInt(this.a) + parseInt(this.c)).toString();
     this.display = (parseInt(this.display) + parseInt(this.c)).toString();
 
-    this.arr.push(parseInt(this.display) + parseInt(this.c));
     }
 
-    if(this.b == "-"){
+    if(this.b === "-"){
       this.display = this.display + "=" + (parseInt(this.a) - parseInt(this.c)).toString();
       this.display = (parseInt(this.display) - parseInt(this.c)).toString();
     }
 
-    if(this.b == "*"){
+    if(this.b === "*"){
       this.display = this.display + "=" + (parseInt(this.a) * parseInt(this.c)).toString();
       this.display = (parseInt(this.display) * parseInt(this.c)).toString();
     }
 
-    if(this.b == "/"){
+    if(this.b === "/"){
       this.display = this.display + "=" + (parseInt(this.a) / parseInt(this.c)).toString();
       this.display = (parseInt(this.display) / parseInt(this.c)).toString();
     }
+
+    this.arr.push(parseInt(this.display) + parseInt(this.c));
   }
 }
