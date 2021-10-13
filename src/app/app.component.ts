@@ -13,6 +13,7 @@ export class AppComponent {
 
   display: any = "";
   a: any;
+  history = "";
   
   buttonValues = [
 
@@ -40,13 +41,13 @@ export class AppComponent {
     this.display += event;
     console.log(this.display);
 
+    if(this.display.includes('C')){
+      this.display = "";
+    }
     if(this.display.includes('=')){     
       this.a = eval(this.display.replace('=',''));
-      this.display += (this.a)
-    }
-
-    if(this.display.includes('C'))
-      this.display = '';
-    }
-
+      this.display += this.a;
+      this.history = this.history + "\n" + this.display;
+    } 
+  }
 }

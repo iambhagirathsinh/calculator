@@ -7,4 +7,10 @@ button{
     font-size: 25px;
     outline: none;
     border: 0;
+    transition: .5s;
+}
+
+button:hover{
+    background-color: tomato;
+    color: #000;
 }

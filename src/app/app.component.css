@@ -1,6 +1,12 @@
+.history{
+    text-align: center;
+    background-color: turquoise;
+}
+
+
 .calculator{
     text-align: center;
-    margin-top: 100px;
+    margin-top: 50px;
 }
 
 input{
@@ -11,7 +17,7 @@ input{
     text-align: right;
     background-color: rgb(75, 72, 72);
     color: #fff;
-    font-size: 35px;
+    font-size: 25px;
     outline: none;
     border: 0;
 }
