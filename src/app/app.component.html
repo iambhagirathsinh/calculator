@@ -1,12 +1,12 @@
 <div class="calculator">
-    <input type="text" [(ngModel)]="display">
-</div><br/><br/>
-
-<div *ngFor="let b of buttonValues; let i = index">
-    <app-cal (box)="output($event)" [ivalues]="b"></app-cal>
+    <input type="text" class="bg-primary" [(ngModel)]="display">
 </div>
 
-<router-outlet></router-outlet>
+<div class="card">
+    <div class="col-md-3 bg-primary" *ngFor="let b of buttonValues">
+        <app-cal (box)="output($event)" [ivalues]="b"></app-cal>
+    </div>
+</div>
 
 
 

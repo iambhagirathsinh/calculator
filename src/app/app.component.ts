@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -10,6 +11,9 @@ export class AppComponent {
 
   constructor(){}
 
+  display: any = "";
+  a: any;
+  
   buttonValues = [
 
     { btn: '1' },
@@ -21,21 +25,28 @@ export class AppComponent {
     { btn: '7' },
     { btn: '8' },
     { btn: '9' },
+    { btn: '0' },
     { btn: '+' },
     { btn: '-' },
     { btn: '*' },
     { btn: '/' },
     { btn: '=' },
+    { btn: 'C' },
 
   ]
 
-  display: any;
+  output(event: any){
 
-  output($event: any){
-    this.display = $event
-    
-  }
-  
+    this.display += event;
+    console.log(this.display);
 
-  
+    if(this.display.includes('=')){     
+      this.a = eval(this.display.replace('=',''));
+      this.display += (this.a)
+    }
+
+    if(this.display.includes('C'))
+      this.display = '';
+    }
+
 }

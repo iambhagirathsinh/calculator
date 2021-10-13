@@ -1,5 +1,21 @@
 .calculator{
-    margin: 0px auto;
     text-align: center;
     margin-top: 100px;
+}
+
+input{
+    width: 330px;
+    height: 50px;
+    margin: 0px auto;
+    padding: 70px 30px;
+    text-align: right;
+    color: #fff;
+    font-size: 35px;
+    outline: none;
+    border: 0;
+}
+
+.card{
+    margin: 0px auto;
+    width: 330px;
 }
