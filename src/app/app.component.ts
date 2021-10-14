@@ -13,7 +13,8 @@ export class AppComponent {
 
   display: any = "";
   a: any;
-  history = "";
+  history: any = [];
+  idelete: any = [];
   
   buttonValues = [
 
@@ -37,17 +38,19 @@ export class AppComponent {
   ]
 
   output(event: any){
-
+    
     this.display += event;
-    console.log(this.display);
-
     if(this.display.includes('C')){
       this.display = "";
     }
     if(this.display.includes('=')){     
       this.a = eval(this.display.replace('=',''));
       this.display += this.a;
-      this.history = this.history + "\n" + this.display;
-    } 
+      this.history.push(this.display)
+    }  
+  }
+
+  del(){
+    this.history.splice(this.history, 1)
   }
 }

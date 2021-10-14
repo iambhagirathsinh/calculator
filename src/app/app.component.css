@@ -3,6 +3,35 @@
     background-color: turquoise;
 }
 
+h1{
+    font-weight: 650;
+}
+
+table{
+    margin: auto auto;
+    text-align: center;
+}
+
+p{
+    margin: 10px 10px;
+    font-size: 18px;
+    color: #fff;
+}
+
+a{
+    background-color: tomato;
+    color: #fff;
+    margin: 10px 10px;
+    font-size: 16px;
+    padding: 5px 10px;
+    transition: .3s;
+    cursor: pointer;
+}
+
+a:hover{
+    text-decoration: none;
+    background-color: darkslategrey;
+}
 
 .calculator{
     text-align: center;

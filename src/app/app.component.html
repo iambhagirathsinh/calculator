@@ -1,6 +1,13 @@
 <div class="history">
     <h1>HISTORY</h1>
-    <p style="white-space: pre-line;">{{history}}</p>
+    <table>
+        <tbody>
+            <tr *ngFor="let h of history;">
+                <td><p style="white-space: pre-line;">{{h}}</p></td>
+                <td><a style="white-space: pre-line;" *ngIf="history" (click)="del()">DELETE</a></td>
+            </tr>
+        </tbody>
+    </table>
 </div>
 
 
